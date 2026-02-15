@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+     <table border="1" id="table">
+        <tr><th>id</th><th>nom</th><th>suprimer</th></tr>
+
+    </table>
+    <input type="button" value="ajouter" onclick="v()">
+   </form>
+    
+    <script>
+        function a(ele){
+           ele.parentNode.parentNode.parentNode.removeChild(ele.parentNode.parentNode)
+        }
+        function v(){
+            var table=document.getElementById("table");
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            var td1 = document.createElement("td");
+            td1.innerHTML=prompt("3tini id :");
+            tr.appendChild(td1);
+            var td2 = document.createElement("td");
+            td2.innerHTML=prompt("3tini nom :");
+            tr.appendChild(td2);
+            var td3 = document.createElement("td");
+            td3.innerHTML=`<input type="button" value="*" onclick="a(this)">`;
+            tr.appendChild(td3);
+
+        }
+    </script>
+</body>
+</html>
+
